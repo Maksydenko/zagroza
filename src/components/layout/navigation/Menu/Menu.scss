@@ -48,7 +48,8 @@
 
       &_active {
         &::before,
-        &::after {
+        &::after,
+        span {
           height: 10%;
         }
 

@@ -1,0 +1,144 @@
+.generating-id {
+  &__container {
+    display: flex;
+    margin-bottom: rem(105);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__body {
+    flex: 0 0 45%;
+
+    @media (max-width: $mobile) {
+      flex: 1 1 45%;
+      margin-bottom: rem(50);
+    }
+  }
+  // .generating-id__label
+
+  &__label {
+    display: block;
+    margin-bottom: em(15);
+    line-height: em(24);
+    text-transform: uppercase;
+    color: #7000ff;
+  }
+
+  // .generating-id__title
+
+  &__title {
+    max-width: em(300, 36);
+    font-size: rem(36);
+    font-weight: 700;
+    line-height: em(54, 36);
+    letter-spacing: -0.02em;
+  }
+
+  // .generating-id__text
+
+  &__text {
+    margin-bottom: em(30);
+    line-height: em(24);
+    letter-spacing: -0.02em;
+
+    span {
+      font-weight: 700;
+      color: #7000ff;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: rem(145);
+      height: rem(210);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 75, 255, 0) 0%,
+        #174aff 100%
+      );
+      filter: blur(rem(80));
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: rem(305);
+      height: rem(305);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 194, 255, 0) 0%,
+        #ff29c3 100%
+      );
+      filter: blur(rem(80));
+    }
+  }
+
+  &__img {
+    z-index: 3;
+
+    &._man {
+      position: relative;
+      width: rem(238);
+      padding-bottom: rem(444);
+    }
+
+    &._burger-1 {
+      position: absolute;
+      top: rem(60);
+      left: rem(-20);
+      width: rem(65);
+      padding-bottom: rem(65);
+    }
+
+    &._burger-2 {
+      position: absolute;
+      top: rem(-25);
+      left: rem(250);
+      width: rem(185);
+      padding-bottom: rem(185);
+
+      @media (max-width: $mobile) {
+        filter: blur(rem(12));
+      }
+    }
+
+    &._burger-3 {
+      position: absolute;
+      top: rem(180);
+      left: rem(380);
+      width: rem(85);
+      padding-bottom: rem(85);
+      filter: blur(rem(3.5));
+      transform: rotate(60deg);
+
+      @media (max-width: $mobile) {
+        left: rem(270);
+      }
+    }
+
+    &._burger-4 {
+      position: absolute;
+      top: rem(-50);
+      left: rem(500);
+      width: rem(250);
+      padding-bottom: rem(250);
+      filter: blur(rem(12));
+      transform: rotate(60deg);
+    }
+  }
+}

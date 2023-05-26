@@ -1,0 +1,20 @@
+.title {
+  position: relative;
+  text-align: center;
+  font-size: rem(24);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: $purple;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: em(-20, 24);
+    left: 50%;
+    transform: translateX(-50%);
+    width: em(95, 24);
+    height: em(3, 24);
+    border-radius: em(3, 24);
+    background-color: $yellow;
+  }
+}

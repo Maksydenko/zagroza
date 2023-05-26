@@ -1,0 +1,25 @@
+.navigation {
+  // .navigation__list
+
+  &__list {
+    display: flex;
+  }
+
+  // .navigation__item
+
+  &__item {
+  }
+
+  // .navigation__link
+
+  &__link {
+    @media (min-width: $tablet) {
+      padding: em(10, 14) em(52.2, 14);
+    }
+    transition: opacity 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

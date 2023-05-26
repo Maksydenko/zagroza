@@ -1,0 +1,20 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: rem(5);
+
+  label {
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: em(21, 14);
+    text-transform: capitalize;
+    color: #7000ff;
+  }
+
+  input {
+    padding: em(8) em(16);
+    border: em(1) solid #ae96cb;
+    line-height: em(24);
+    border-radius: em(8);
+  }
+}

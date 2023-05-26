@@ -1,0 +1,32 @@
+@import "Card/Card.scss";
+
+.benefits {
+  &__container {
+    margin-bottom: rem(10);
+  }
+
+  &__title {
+    margin-bottom: em(32, 24);
+  }
+
+  // .benefits__text
+
+  &__text {
+    margin: 0 auto em(60);
+    max-width: em(650);
+    text-align: center;
+    line-height: em(24);
+    letter-spacing: -0.02em;
+  }
+
+  // .benefits__cards
+
+  &__cards {
+    display: flex;
+    gap: rem(50);
+
+    > div {
+      flex: 1 1 33.333%;
+    }
+  }
+}

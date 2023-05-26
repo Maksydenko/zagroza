@@ -1,0 +1,51 @@
+@import "@/components/layout/navigation/Menu/Menu.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: $mainBg;
+
+  // .header__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: rem(1200);
+    min-height: rem(70);
+  }
+
+  // .header__logo
+
+  &__logo {
+    position: relative;
+    z-index: 9;
+    transition: opacity 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    @media (max-width: $tablet) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__menu {
+    @media (max-width: $tablet) {
+      order: -1;
+    }
+  }
+
+  &__social-networks {
+    @media (min-width: $tablet) {
+      display: none !important;
+    }
+  }
+}

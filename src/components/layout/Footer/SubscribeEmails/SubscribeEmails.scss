@@ -1,0 +1,51 @@
+.subscribe-emails {
+  display: flex;
+  align-items: center;
+  gap: em(15, 14) em(25, 14);
+  flex-wrap: wrap;
+  line-height: em(21, 14);
+  @include responsiveValue("font-size", 14, 12, 1, 375, $minWidth);
+
+  // .subscribe-emails__label
+
+  &__label {
+  }
+
+  // .subscribe-emails__form
+
+  &__form {
+    display: flex;
+
+    > * {
+      border: em(1, 14) solid $mainBg;
+      padding: em(10, 14) em(20, 14);
+    }
+  }
+
+  // .subscribe-emails__input
+
+  &__input {
+    border-right-width: 0;
+    border-top-left-radius: em(5, 14);
+    border-bottom-left-radius: em(5, 14);
+
+    &::placeholder {
+      color: $mainBg;
+    }
+  }
+
+  // .subscribe-emails__submit
+
+  &__submit {
+    border-top-right-radius: em(5, 14);
+    border-bottom-right-radius: em(5, 14);
+    color: $purple;
+    background-color: $mainBg;
+    transition: color, background-color 0.3s ease 0s;
+
+    &:hover {
+      color: $mainBg;
+      background-color: transparent;
+    }
+  }
+}

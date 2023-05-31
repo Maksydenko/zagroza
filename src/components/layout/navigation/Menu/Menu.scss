@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: rem(62.5);
+
   // .menu__button
 
   &__button {
@@ -20,7 +21,7 @@
         position: absolute;
         left: 0;
         width: 100%;
-        height: rem(3.5);
+        height: 20%;
         background-color: $mainColor;
         transition: all 0.3s ease 0s;
       }
@@ -44,6 +45,12 @@
         transform: scale(1) translateY(-50%);
       }
 
+      &:hover {
+        span {
+          width: 100%;
+        }
+      }
+
       // .menu__button_active
 
       &_active {
@@ -65,12 +72,6 @@
 
         span {
           transform: scale(0);
-        }
-      }
-
-      &:hover {
-        span {
-          width: 100%;
         }
       }
     }

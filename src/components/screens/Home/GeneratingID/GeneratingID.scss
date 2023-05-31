@@ -123,11 +123,14 @@
       left: rem(380);
       width: rem(85);
       padding-bottom: rem(85);
-      filter: blur(rem(3.5));
       transform: rotate(60deg);
 
       @media (max-width: $mobile) {
         left: rem(270);
+      }
+
+      img {
+        filter: blur(rem(3.5));
       }
     }
 

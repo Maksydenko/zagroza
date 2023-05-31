@@ -1,9 +1,11 @@
 import { FC, useRef } from "react";
 import Image from "next/image";
 
-import { IImg } from "@/interfaces/img.interface";
-import { useLoading } from "@/hooks/useLoading";
 import Loader from "@/components/shared/Loader/Loader";
+
+import { useLoading } from "@/hooks/useLoading";
+
+import { IImg } from "@/interfaces/img.interface";
 
 interface IImgProps {
   className: string;

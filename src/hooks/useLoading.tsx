@@ -6,16 +6,25 @@ interface IUseLoading {
 
 export const useLoading: IUseLoading = (object) => {
   const [isLoading, setIsLoading] = useState(true);
-  const onObjectLoad = () => setIsLoading(false);
+  const handleObjectLoaded = () => setIsLoading(false);
 
   useEffect(() => {
+    const isVideo = object.current.tagName === "VIDEO";
+
     if (object.current.complete) {
-      onObjectLoad();
+      handleObjectLoaded();
     } else {
-      object.current.addEventListener("load", onObjectLoad);
+      object.current.addEventListener("load", handleObjectLoaded);
+      isVideo &&
+        object.current.addEventListener("loadedmetadata", handleObjectLoaded);
 
       return () => {
-        object.current?.removeEventListener("load", onObjectLoad);
+        object.current?.removeEventListener("load", handleObjectLoaded);
+        isVideo &&
+          object.current?.removeEventListener(
+            "loadedmetadata",
+            handleObjectLoaded
+          );
       };
     }
   }, [object, isLoading]);

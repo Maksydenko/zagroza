@@ -1,18 +1,20 @@
 import { FC } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
+import Menu from "@/components/layout/navigation/Menu/Menu";
+import Img from "@/components/base/Img/Img";
+import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
+
 import { useLockScroll } from "@/hooks/useLockScroll";
 import { useWindowSize } from "@/hooks/useWindowSize";
 
-import Menu from "@/components/layout/navigation/Menu/Menu";
-import Img from "@/components/base/Img/Img";
+import { Breakpoint } from "@/enums/breakpoint.enum";
 
 import logo from "@/assets/img/logo.svg";
-import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
 
 const Header: FC = () => {
   const { isLockedScroll, setIsLockedScroll } = useLockScroll();
-  const breakpoint = 991.98;
+  const breakpoint = Breakpoint.Tablet;
 
   // Handle unlock scroll
   interface IHandleUnlockScroll {

@@ -1,17 +1,23 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import Title from "@/components/shared/Title/Title";
 import SliderSwiper from "@/components/base/SliderSwiper/SliderSwiper";
 import Card from "./Card/Card";
 
-import { useWindowSize } from "./useWindowSize";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 import { cards } from "./cards.const";
+import { Breakpoint } from "@/enums/breakpoint.enum";
 
 interface BenefitsProps {}
 
 const Benefits: FC<BenefitsProps> = ({}) => {
-  const isMobile = useWindowSize();
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth > Breakpoint.Mobile);
+  };
+  useWindowSize(handleResize, isMobile);
 
   const cardItems = cards.map((card, index) => (
     <Card key={index} card={card} />

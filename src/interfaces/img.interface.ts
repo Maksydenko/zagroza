@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
 export interface IImg {
-  src: StaticImageData;
+  src: StaticImageData | string;
   alt: string;
 }

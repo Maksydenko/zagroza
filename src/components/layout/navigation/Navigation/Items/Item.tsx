@@ -3,11 +3,11 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import { ILink } from "../../links/link.interface";
 
-interface IItems {
+interface ItemProps {
   link: ILink;
 }
 
-const Item: FC<IItems> = ({ link }) => (
+const Item: FC<ItemProps> = ({ link }) => (
   <li className="navigation__item">
     <AnchorLink href={link.path} offset={100} className="navigation__link">
       {link.value}

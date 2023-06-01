@@ -8,9 +8,9 @@ import { useWindowSize } from "./useWindowSize";
 
 import { cards } from "./cards.const";
 
-interface IBenefitsProps {}
+interface BenefitsProps {}
 
-const Benefits: FC<IBenefitsProps> = ({}) => {
+const Benefits: FC<BenefitsProps> = ({}) => {
   const isMobile = useWindowSize();
 
   const cardItems = cards.map((card, index) => (

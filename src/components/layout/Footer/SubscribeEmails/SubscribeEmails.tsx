@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Form from "./Form";
 
-interface IFormProps {}
+interface FormProps {}
 
-const SubscribeEmails: FC<IFormProps> = ({}) => {
+const SubscribeEmails: FC<FormProps> = ({}) => {
   return (
     <div className="footer__subscribe-emails subscribe-emails">
       <span className="subscribe-emails__label">

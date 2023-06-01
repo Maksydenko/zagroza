@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 
-interface IFormProps {}
+interface FormProps {}
 
-const Form: FC<IFormProps> = ({}) => {
+const Form: FC<FormProps> = ({}) => {
   const [value, setValue] = useState("");
 
   // Handle submit

@@ -2,9 +2,9 @@ import { FC, FormEvent } from "react";
 import { inputs } from "./inputs.const";
 import Input from "./Input/Input";
 
-interface IFormProps {}
+interface FormProps {}
 
-const Form: FC<IFormProps> = ({}) => {
+const Form: FC<FormProps> = ({}) => {
   // Handle submit
   interface IHandleSubmit {
     (e: FormEvent<HTMLFormElement>): void;

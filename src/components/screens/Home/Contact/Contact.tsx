@@ -3,16 +3,14 @@ import { FC } from "react";
 import Img from "@/components/base/Img/Img";
 import Title from "@/components/shared/Title/Title";
 
-import { IImg } from "@/interfaces/img.interface";
-
 import chat from "@/assets/img/chat.png";
 import Text from "./Text";
 import Form from "./Form";
 
-interface IContactProps {}
+interface ContactProps {}
 
-const Contact: FC<IContactProps> = ({}) => {
-  const chatImg: IImg = {
+const Contact: FC<ContactProps> = ({}) => {
+  const chatImg = {
     src: chat,
     alt: "Chat",
   };

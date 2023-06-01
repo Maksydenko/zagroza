@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, useState } from "react";
 
-interface IInputProps {
+interface InputProps {
   input: {
     id: string;
     type: string;
@@ -8,7 +8,7 @@ interface IInputProps {
   };
 }
 
-const Input: FC<IInputProps> = ({ input: { id, type, placeholder } }) => {
+const Input: FC<InputProps> = ({ input: { id, type, placeholder } }) => {
   const [value, setValue] = useState("");
 
   // Handle change

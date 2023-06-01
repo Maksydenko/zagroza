@@ -2,9 +2,9 @@ import { FC } from "react";
 
 import Button from "@/components/shared/Button/Button";
 
-interface IBodyProps {}
+interface BodyProps {}
 
-const Body: FC<IBodyProps> = ({}) => {
+const Body: FC<BodyProps> = ({}) => {
   return (
     <div className="generating-id__body">
       <span className="generating-id__label">#contecomagente</span>

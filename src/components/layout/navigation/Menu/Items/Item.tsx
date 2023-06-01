@@ -3,12 +3,12 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import { ILink } from "../../links/link.interface";
 
-interface IItems {
+interface ItemProps {
   link: ILink;
   onClick: () => void;
 }
 
-const Item: FC<IItems> = ({ link, onClick }) => (
+const Item: FC<ItemProps> = ({ link, onClick }) => (
   <li className="menu__item">
     <AnchorLink
       href={link.path}

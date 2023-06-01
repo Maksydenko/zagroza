@@ -2,14 +2,14 @@ import { getModifierClassName } from "@/utils/className.util";
 import Link from "next/link";
 import { FC } from "react";
 
-interface IButtonProps {
+interface ButtonProps {
   className: string;
   children: string;
   path: string;
   transparent?: boolean;
 }
 
-const Button: FC<IButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   className,
   children,
   path,

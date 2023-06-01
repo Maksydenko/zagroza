@@ -1,11 +1,11 @@
 import { FC } from "react";
 
 import Items from "./Items/Items";
+import SocialNetworks from "../SocialNetworks/SocialNetworks";
 
 import { getModifierClassName } from "@/utils/className.util";
 
 import { links } from "../links/links.const";
-import SocialNetworks from "../SocialNetworks/SocialNetworks";
 
 interface MenuProps {
   isLockedScroll: boolean;

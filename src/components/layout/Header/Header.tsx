@@ -7,8 +7,6 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import Menu from "@/components/layout/navigation/Menu/Menu";
 import Img from "@/components/base/Img/Img";
 
-import { IImg } from "@/interfaces/img.interface";
-
 import logo from "@/assets/img/logo.svg";
 import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
 
@@ -42,7 +40,7 @@ const Header: FC = () => {
     windowWidth <= breakpoint && setIsLockedScroll(!isLockedScroll);
   };
 
-  const img: IImg = {
+  const img = {
     src: logo,
     alt: "nice",
   };

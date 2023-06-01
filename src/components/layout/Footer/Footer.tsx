@@ -6,12 +6,10 @@ import Navigation from "../navigation/Navigation/Navigation";
 import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
 import SubscribeEmails from "./SubscribeEmails/SubscribeEmails";
 
-import { IImg } from "@/interfaces/img.interface";
-
 import logo from "@/assets/img/logo.svg";
 
 const Footer: FC = () => {
-  const img: IImg = {
+  const img = {
     src: logo,
     alt: "nice",
   };

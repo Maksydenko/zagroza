@@ -2,23 +2,22 @@ import { FC } from "react";
 
 import Img from "@/components/base/Img/Img";
 
-import { IImg } from "@/interfaces/img.interface";
-
 import manPhone from "@/assets/img/man-phone.png";
 import burger from "@/assets/img/burger.png";
 import Body from "./Body";
 
-interface IGeneratingIDProps {}
+interface GeneratingIDProps {}
 
-const GeneratingID: FC<IGeneratingIDProps> = ({}) => {
-  const manImg: IImg = {
+const GeneratingID: FC<GeneratingIDProps> = ({}) => {
+  const manImg = {
     src: manPhone,
     alt: "Man with phone",
   };
-  const burgerImg: IImg = {
+  const burgerImg = {
     src: burger,
     alt: "Burger",
   };
+
   return (
     <section id="generating-id" className="generating-id">
       <div className="generating-id__container">

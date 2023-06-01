@@ -3,7 +3,7 @@ import Img from "@/components/base/Img/Img";
 
 import { IImg } from "@/interfaces/img.interface";
 
-interface ICardProps {
+interface CardProps {
   card: {
     img: IImg;
     title: string;
@@ -11,7 +11,7 @@ interface ICardProps {
   };
 }
 
-const Card: FC<ICardProps> = ({ card: { img, title, text } }) => {
+const Card: FC<CardProps> = ({ card: { img, title, text } }) => {
   return (
     <div className="benefits__card card">
       <Img className="card" img={img} />

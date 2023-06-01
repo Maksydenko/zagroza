@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { FC } from "react";
 
-interface ISocialNetworksProps {
+interface SocialNetworksProps {
   className: string;
 }
 
-const SocialNetworks: FC<ISocialNetworksProps> = ({ className }) => {
+const SocialNetworks: FC<SocialNetworksProps> = ({ className }) => {
   return (
     <div className={`${className}__social-networks social-networks`}>
       <Link href="/" className="_icon-instagram"></Link>

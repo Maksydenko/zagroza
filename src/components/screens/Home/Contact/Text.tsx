@@ -3,14 +3,12 @@ import Link from "next/link";
 
 import Img from "@/components/base/Img/Img";
 
-import { IImg } from "@/interfaces/img.interface";
-
 import whatsapp from "@/assets/img/whatsapp.png";
 
-interface ITextProps {}
+interface TextProps {}
 
-const Text: FC<ITextProps> = ({}) => {
-  const whatsappImg: IImg = {
+const Text: FC<TextProps> = ({}) => {
+  const whatsappImg = {
     src: whatsapp,
     alt: "WhatsApp",
   };

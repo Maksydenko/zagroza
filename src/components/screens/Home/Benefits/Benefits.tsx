@@ -17,7 +17,7 @@ const Benefits: FC<BenefitsProps> = ({}) => {
   const handleResize = () => {
     setIsMobile(window.innerWidth > Breakpoint.Mobile);
   };
-  useWindowSize(handleResize, isMobile);
+  useWindowSize(handleResize);
 
   const cardItems = cards.map((card, index) => (
     <Card key={index} card={card} />

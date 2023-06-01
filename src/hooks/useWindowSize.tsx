@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
 interface IUseWindowSize {
-  (handler: () => void, dependency: boolean | string): void;
+  (handler: () => void): void;
 }
 
-export const useWindowSize: IUseWindowSize = (handler, dependency) => {
+export const useWindowSize: IUseWindowSize = (handler) => {
   useEffect(() => {
     handler();
     window.addEventListener("resize", handler);
@@ -12,5 +12,5 @@ export const useWindowSize: IUseWindowSize = (handler, dependency) => {
     return () => {
       window.removeEventListener("resize", handler);
     };
-  }, [dependency]);
+  }, []);
 };

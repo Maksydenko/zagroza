@@ -31,7 +31,7 @@ const Header: FC = () => {
     const windowWidth = window.innerWidth;
     windowWidth >= breakpoint && handleUnlockScroll();
   };
-  useWindowSize(handleBreakpointUnlockScroll, isLockedScroll);
+  useWindowSize(handleBreakpointUnlockScroll);
 
   // Handle click
   interface IHandleClick {

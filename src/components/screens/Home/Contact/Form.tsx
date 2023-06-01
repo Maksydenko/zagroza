@@ -1,6 +1,8 @@
 import { FC, FormEvent } from "react";
-import { inputs } from "./inputs.const";
+
 import Input from "./Input/Input";
+
+import { inputs } from "./inputs.const";
 
 interface FormProps {}
 
@@ -13,11 +15,13 @@ const Form: FC<FormProps> = ({}) => {
     e.preventDefault();
   };
 
+  const inputItems = inputs.map((input) => (
+    <Input key={input.id} input={input} />
+  ));
+
   return (
     <form action="#" className="contact__form" onSubmit={handleSubmit}>
-      {inputs.map((input) => (
-        <Input key={input.id} input={input} />
-      ))}
+      {inputItems}
       <button type="submit" className="contact__submit button">
         Enviar!
       </button>

@@ -9,10 +9,10 @@ interface ItemsProps {
 }
 
 const Items: FC<ItemsProps> = ({ links }) => (
-  <ul className="navigation__list">
+  <>
     {links.map((link, index) => (
       <Item key={index} link={link} />
     ))}
-  </ul>
+  </>
 );
 export default Items;

@@ -22,7 +22,9 @@ const Menu: FC<MenuProps> = ({ isLockedScroll, onClick }) => (
       <span></span>
     </button>
     <nav className={getModifierClassName(isLockedScroll, "menu__body")}>
-      <Items links={links} onClick={onClick} />
+      <ul className="menu__list">
+        <Items links={links} onClick={onClick} />
+      </ul>
     </nav>
     <SocialNetworks className="menu" />
   </div>

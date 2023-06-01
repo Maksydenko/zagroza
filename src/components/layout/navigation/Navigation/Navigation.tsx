@@ -8,7 +8,9 @@ interface NavigationProps {}
 const Navigation: FC<NavigationProps> = ({}) => {
   return (
     <nav className="footer__navigation navigation">
-      <Items links={links} />
+      <ul className="navigation__list">
+        <Items links={links} />
+      </ul>
     </nav>
   );
 };

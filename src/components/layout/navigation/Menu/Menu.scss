@@ -55,19 +55,16 @@
 
       &_active {
         &::before,
-        &::after,
-        span {
-          height: 10%;
+        &::after {
+          top: 50%;
         }
 
         &::before {
-          top: 50%;
-          transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg);
         }
 
         &::after {
-          bottom: 50%;
-          transform: rotate(-45deg) translateY(50%);
+          transform: rotate(-45deg);
         }
 
         span {

@@ -1,6 +1,7 @@
-import { getModifierClassName } from "@/utils/className.util";
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
+
+import { handleClassName } from "@/utils/className.util";
 
 interface ButtonProps {
   className: string;
@@ -13,13 +14,13 @@ const Button: FC<ButtonProps> = ({
   className,
   children,
   path,
-  transparent = false,
+  transparent,
 }) => {
   return (
     <Link
       href={path}
-      className={`${className}__button ${getModifierClassName(
-        transparent,
+      className={`${className}__button ${handleClassName(
+        !!transparent,
         "button",
         "transparent"
       )}`}

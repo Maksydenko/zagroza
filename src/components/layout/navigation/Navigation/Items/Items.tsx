@@ -10,8 +10,8 @@ interface ItemsProps {
 
 const Items: FC<ItemsProps> = ({ links }) => (
   <>
-    {links.map((link, index) => (
-      <Item key={index} link={link} />
+    {links.map((link) => (
+      <Item key={link.path} link={link} />
     ))}
   </>
 );

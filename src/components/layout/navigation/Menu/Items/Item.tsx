@@ -8,15 +8,15 @@ interface ItemProps {
   onClick: () => void;
 }
 
-const Item: FC<ItemProps> = ({ link, onClick }) => (
+const Item: FC<ItemProps> = ({ link: { value, href }, onClick }) => (
   <li className="menu__item">
     <AnchorLink
-      href={link.path}
+      href={href}
       offset={100}
       className="menu__link"
       onClick={onClick}
     >
-      {link.value}
+      {value}
     </AnchorLink>
   </li>
 );

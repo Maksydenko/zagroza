@@ -7,10 +7,10 @@ interface ItemProps {
   link: ILink;
 }
 
-const Item: FC<ItemProps> = ({ link }) => (
+const Item: FC<ItemProps> = ({ link: { value, href } }) => (
   <li className="navigation__item">
-    <AnchorLink href={link.path} offset={100} className="navigation__link">
-      {link.value}
+    <AnchorLink href={href} offset={100} className="navigation__link">
+      {value}
     </AnchorLink>
   </li>
 );

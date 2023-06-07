@@ -1,14 +1,14 @@
 export const links = [
   {
     value: "o que fazemos",
-    path: "#benefits",
+    href: "#benefits",
   },
   {
     value: "como te ajudamos",
-    path: "#generating-id",
+    href: "#generating-id",
   },
   {
     value: "fale conosco",
-    path: "#contact",
+    href: "#contact",
   },
 ];

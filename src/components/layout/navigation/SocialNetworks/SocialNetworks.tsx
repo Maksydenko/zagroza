@@ -1,5 +1,7 @@
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
+
+import { links } from "./links.const";
 
 interface SocialNetworksProps {
   className: string;
@@ -8,8 +10,13 @@ interface SocialNetworksProps {
 const SocialNetworks: FC<SocialNetworksProps> = ({ className }) => {
   return (
     <div className={`${className}__social-networks social-networks`}>
-      <Link href="/" className="_icon-instagram"></Link>
-      <Link href="/" className="_icon-facebook"></Link>
+      {links.map((link) => (
+        <Link
+          key={link.value}
+          href={link.href}
+          className={`_icon-${link.value}`}
+        ></Link>
+      ))}
     </div>
   );
 };

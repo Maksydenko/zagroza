@@ -5,7 +5,6 @@ const Document = () => (
     <Head>
       <link rel="apple-touch-icon" href="/zagroza/favicon.png" />
       <link rel="icon" href="/zagroza/favicon.png" />
-      <title>Nice</title>
     </Head>
     <body>
       <Main />

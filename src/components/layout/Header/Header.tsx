@@ -43,8 +43,8 @@ const Header: FC = () => {
   }
   const handleClick: IHandleClick = () => {
     const windowWidth = window.innerWidth;
-    const isMoreBreakpoint = windowWidth < breakpoint;
-    isMoreBreakpoint && setIsLockedScroll(!isLockedScroll);
+    const isLessBreakpoint = windowWidth < breakpoint;
+    isLessBreakpoint && setIsLockedScroll(!isLockedScroll);
   };
 
   const img = {

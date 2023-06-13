@@ -11,7 +11,7 @@ interface ItemsProps {
 const Items: FC<ItemsProps> = ({ links }) => (
   <>
     {links.map((link) => (
-      <Item key={link.path} link={link} />
+      <Item key={link.href} link={link} />
     ))}
   </>
 );

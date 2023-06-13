@@ -15,7 +15,7 @@ const Benefits: FC<BenefitsProps> = ({}) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth > Breakpoint.Mobile);
+    setIsMobile(window.innerWidth < Breakpoint.Mobile);
   };
   useWindowSize(handleResize);
 
@@ -34,9 +34,9 @@ const Benefits: FC<BenefitsProps> = ({}) => {
           serviço. Palavras-chave ajudam no SEO.
         </p>
         {isMobile ? (
-          <div className="benefits__cards">{cardItems}</div>
-        ) : (
           <SliderSwiper className="benefits">{cardItems}</SliderSwiper>
+        ) : (
+          <div className="benefits__cards">{cardItems}</div>
         )}
       </div>
     </section>

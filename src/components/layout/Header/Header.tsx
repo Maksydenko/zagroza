@@ -29,7 +29,7 @@ const Header: FC = () => {
   }
   const handleBreakpointUnlockScroll: IHandleBreakpointUnlockScroll = () => {
     const windowWidth = window.innerWidth;
-    windowWidth >= breakpoint && handleUnlockScroll();
+    windowWidth > breakpoint && isLockedScroll && handleUnlockScroll();
   };
   useWindowSize(handleBreakpointUnlockScroll);
 
@@ -39,7 +39,7 @@ const Header: FC = () => {
   }
   const handleClick: IHandleClick = () => {
     const windowWidth = window.innerWidth;
-    windowWidth <= breakpoint && setIsLockedScroll(!isLockedScroll);
+    windowWidth < breakpoint && setIsLockedScroll(!isLockedScroll);
   };
 
   const img = {

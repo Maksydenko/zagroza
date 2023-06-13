@@ -19,9 +19,7 @@ const Benefits: FC<BenefitsProps> = ({}) => {
   };
   useWindowSize(handleResize);
 
-  const cardItems = cards.map((card, index) => (
-    <Card key={index} card={card} />
-  ));
+  const cardItems = cards.map((card) => <Card key={card.id} card={card} />);
 
   return (
     <section id="benefits" className="benefits">

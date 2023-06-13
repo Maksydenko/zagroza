@@ -5,7 +5,7 @@ import Menu from "@/components/layout/navigation/Menu/Menu";
 import Img from "@/components/base/Img/Img";
 import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
 
-import { useLockScroll } from "@/hooks/useLockScroll";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import { useWindowSize } from "@/hooks/useWindowSize";
 
 import { Breakpoint } from "@/enums/breakpoint.enum";
@@ -13,7 +13,10 @@ import { Breakpoint } from "@/enums/breakpoint.enum";
 import logo from "@/assets/img/logo.svg";
 
 const Header: FC = () => {
-  const { isLockedScroll, setIsLockedScroll } = useLockScroll();
+  const {
+    isScrollLocked: isLockedScroll,
+    setIsScrollLocked: setIsLockedScroll,
+  } = useScrollLock();
   const breakpoint = Breakpoint.Tablet;
 
   // Handle unlock scroll

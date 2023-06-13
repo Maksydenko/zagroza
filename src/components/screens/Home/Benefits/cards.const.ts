@@ -2,8 +2,18 @@ import target from "@/assets/img/target.png";
 import coin from "@/assets/img/coin.png";
 import card from "@/assets/img/card.png";
 
-export const cards = [
+import { IImg } from "@/interfaces/img.interface";
+
+interface ICard {
+  id: number;
+  img: IImg;
+  title: string;
+  text: string;
+}
+
+export const cards: ICard[] = [
   {
+    id: 1,
     img: {
       src: target,
       alt: "Target",
@@ -12,6 +22,7 @@ export const cards = [
     text: "Aproveite esta seção para destacar os benefícios do seu produto ou serviço.",
   },
   {
+    id: 2,
     img: {
       src: coin,
       alt: "Coin",
@@ -20,6 +31,7 @@ export const cards = [
     text: "Aproveite esta seção para destacar os benefícios do seu produto ou serviço.",
   },
   {
+    id: 3,
     img: {
       src: card,
       alt: "Card",

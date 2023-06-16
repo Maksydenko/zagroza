@@ -20,16 +20,20 @@ export const useLoading: IUseLoading = (object) => {
       handleLoadedObject();
     } else {
       object.current.addEventListener("load", handleLoadedObject);
-      isVideo &&
+
+      if (isVideo) {
         object.current.addEventListener("loadedmetadata", handleLoadedObject);
+      }
 
       return () => {
         object.current?.removeEventListener("load", handleLoadedObject);
-        isVideo &&
+
+        if (isVideo) {
           object.current?.removeEventListener(
             "loadedmetadata",
             handleLoadedObject
           );
+        }
       };
     }
   }, [object, isLoading]);

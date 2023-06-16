@@ -6,7 +6,7 @@ import Img from "@/components/base/Img/Img";
 import SocialNetworks from "@/components/layout/navigation/SocialNetworks/SocialNetworks";
 
 import { useScrollLock } from "@/hooks/useScrollLock";
-import { useWindowResize } from "@/hooks/useWindowResize";
+import { useWindowListener } from "@/hooks/useWindowListener";
 
 import { Breakpoint } from "@/enums/breakpoint.enum";
 
@@ -20,8 +20,11 @@ const Header: FC = () => {
   interface IHandleUnlockScroll {
     (): void;
   }
-  const handleUnlockScroll: IHandleUnlockScroll = () =>
-    isScrollLocked && setIsScrollLocked(false);
+  const handleUnlockScroll: IHandleUnlockScroll = () => {
+    if (isScrollLocked) {
+      setIsScrollLocked(false);
+    }
+  };
 
   // Handle unlock scroll on breakpoint
   interface IHandleUnlockScrollOnBreakpoint {
@@ -31,9 +34,12 @@ const Header: FC = () => {
     () => {
       const windowWidth = window.innerWidth;
       const isMoreBreakpoint = windowWidth > breakpoint;
-      isMoreBreakpoint && isScrollLocked && handleUnlockScroll();
+
+      if (isMoreBreakpoint && isScrollLocked) {
+        handleUnlockScroll();
+      }
     };
-  useWindowResize(handleUnlockScrollOnBreakpoint);
+  useWindowListener(handleUnlockScrollOnBreakpoint);
 
   // Handle click
   interface IHandleClick {
@@ -42,7 +48,10 @@ const Header: FC = () => {
   const handleClick: IHandleClick = () => {
     const windowWidth = window.innerWidth;
     const isLessBreakpoint = windowWidth < breakpoint;
-    isLessBreakpoint && setIsScrollLocked(!isScrollLocked);
+
+    if (isLessBreakpoint) {
+      setIsScrollLocked(!isScrollLocked);
+    }
   };
 
   const img = {

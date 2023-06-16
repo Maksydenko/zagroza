@@ -1,45 +1,39 @@
-import { FC, useRef } from "react";
+import { FC } from "react";
 import Image from "next/image";
 
-import Loader from "@/components/shared/Loader/Loader";
-
-import { useLoading } from "@/hooks/useLoading";
+import { handleClassName } from "@/utils/className.util";
 
 import { IImg } from "@/interfaces/img.interface";
 
-interface IImgProps {
+interface ImgProps {
   className: string;
+  modifier?: string;
   img: IImg;
   style?: { [property: string]: string };
-  defaultStyle?: boolean;
+  resetStyle?: boolean;
   width?: number;
   height?: number;
 }
 
-const Img: FC<IImgProps> = ({
+const Img: FC<ImgProps> = ({
   className,
+  modifier,
   img: { src, alt },
   style,
-  defaultStyle = true,
+  resetStyle,
   width = 0,
   height = 0,
 }) => {
-  const objectRef = useRef<HTMLImageElement>(null);
-  const isLoading = useLoading(objectRef);
+  const modifiedClassName = handleClassName(
+    !!modifier,
+    `${className}__img`,
+    modifier
+  );
+  const defaultClassName = resetStyle ? "" : " img";
 
   return (
-    <div
-      className={`${className}__img${defaultStyle ? " img" : ""}`}
-      style={style}
-    >
-      {isLoading && <Loader />}
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        ref={objectRef}
-      />
+    <div className={modifiedClassName + defaultClassName} style={style}>
+      <Image src={src} alt={alt} width={width} height={height} />
     </div>
   );
 };

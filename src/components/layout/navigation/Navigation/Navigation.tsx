@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Items from "./Items/Items";
 
-import { links } from "../links/links.const";
+import { links } from "@/components/layout/navigation/links/links.const";
 
 interface NavigationProps {}
 

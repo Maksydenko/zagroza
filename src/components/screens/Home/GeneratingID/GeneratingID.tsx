@@ -22,12 +22,12 @@ const GeneratingID: FC<GeneratingIDProps> = ({}) => {
     <section id="generating-id" className="generating-id">
       <div className="generating-id__container">
         <Body />
-        <div className="generating-id__image">
-          <Img className="_man generating-id" img={manImg} />
-          <Img className="_burger-1 generating-id" img={burgerImg} />
-          <Img className="_burger-2 generating-id" img={burgerImg} />
-          <Img className="_burger-3 generating-id" img={burgerImg} />
-          <Img className="_burger-4 generating-id" img={burgerImg} />
+        <div className="generating-id__images">
+          <Img className="generating-id" modifier="man" img={manImg} />
+          <Img className="generating-id" modifier="burger-1" img={burgerImg} />
+          <Img className="generating-id" modifier="burger-2" img={burgerImg} />
+          <Img className="generating-id" modifier="burger-3" img={burgerImg} />
+          <Img className="generating-id" modifier="burger-4" img={burgerImg} />
         </div>
       </div>
     </section>

@@ -2,8 +2,8 @@ import { FC } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Img from "@/components/base/Img/Img";
-import Navigation from "../navigation/Navigation/Navigation";
-import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
+import Navigation from "@/components/layout/navigation/Navigation/Navigation";
+import SocialNetworks from "@/components/layout/navigation/SocialNetworks/SocialNetworks";
 import SubscribeEmails from "./SubscribeEmails/SubscribeEmails";
 
 import logo from "@/assets/img/logo.svg";
@@ -20,7 +20,7 @@ const Footer: FC = () => {
         <div className="footer__body">
           <div className="footer__main">
             <AnchorLink href="#about" offset={100} className="footer__logo">
-              <Img className="footer" img={img} defaultStyle={false}></Img>
+              <Img className="footer" img={img} resetStyle></Img>
             </AnchorLink>
             <div className="footer__buttons">
               <Navigation />

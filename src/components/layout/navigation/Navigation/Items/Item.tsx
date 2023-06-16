@@ -1,7 +1,7 @@
 import { FC } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-import { ILink } from "../../links/link.interface";
+import { ILink } from "@/components/layout/navigation/links/link.interface";
 
 interface ItemProps {
   link: ILink;

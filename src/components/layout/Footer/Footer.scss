@@ -76,6 +76,8 @@
   &__subscribe-emails {
   }
 
+  // .footer__copyright
+
   &__copyright {
     padding-top: em(15, 12);
     text-align: center;
@@ -84,11 +86,12 @@
     line-height: em(18, 12);
   }
 
+  // .footer__text
+
   &__text {
     @media (max-width: $mobileSmall) {
       max-width: rem(195);
       margin: 0 auto;
     }
-    // margin: 0 auto;
   }
 }

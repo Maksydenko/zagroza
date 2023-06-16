@@ -18,13 +18,14 @@
 
     > * {
       border: em(1, 14) solid $mainBg;
-      padding: em(10, 14) em(20, 14);
+      padding: em(10, 14) em(25, 14);
     }
   }
 
   // .subscribe-emails__input
 
   &__input {
+    max-width: em(237.5, 14);
     border-right-width: 0;
     border-top-left-radius: em(5, 14);
     border-bottom-left-radius: em(5, 14);

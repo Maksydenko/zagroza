@@ -3,20 +3,17 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Menu from "@/components/layout/navigation/Menu/Menu";
 import Img from "@/components/base/Img/Img";
-import SocialNetworks from "../navigation/SocialNetworks/SocialNetworks";
+import SocialNetworks from "@/components/layout/navigation/SocialNetworks/SocialNetworks";
 
 import { useScrollLock } from "@/hooks/useScrollLock";
-import { useWindowSize } from "@/hooks/useWindowSize";
+import { useWindowResize } from "@/hooks/useWindowResize";
 
 import { Breakpoint } from "@/enums/breakpoint.enum";
 
 import logo from "@/assets/img/logo.svg";
 
 const Header: FC = () => {
-  const {
-    isScrollLocked: isLockedScroll,
-    setIsScrollLocked: setIsLockedScroll,
-  } = useScrollLock();
+  const { isScrollLocked, setIsScrollLocked } = useScrollLock();
   const breakpoint = Breakpoint.Tablet;
 
   // Handle unlock scroll
@@ -24,18 +21,19 @@ const Header: FC = () => {
     (): void;
   }
   const handleUnlockScroll: IHandleUnlockScroll = () =>
-    isLockedScroll && setIsLockedScroll(false);
+    isScrollLocked && setIsScrollLocked(false);
 
-  // handleBreakpointUnlockScroll
-  interface IHandleBreakpointUnlockScroll {
+  // Handle unlock scroll on breakpoint
+  interface IHandleUnlockScrollOnBreakpoint {
     (): void;
   }
-  const handleBreakpointUnlockScroll: IHandleBreakpointUnlockScroll = () => {
-    const windowWidth = window.innerWidth;
-    const isMoreBreakpoint = windowWidth > breakpoint;
-    isMoreBreakpoint && isLockedScroll && handleUnlockScroll();
-  };
-  useWindowSize(handleBreakpointUnlockScroll);
+  const handleUnlockScrollOnBreakpoint: IHandleUnlockScrollOnBreakpoint =
+    () => {
+      const windowWidth = window.innerWidth;
+      const isMoreBreakpoint = windowWidth > breakpoint;
+      isMoreBreakpoint && isScrollLocked && handleUnlockScroll();
+    };
+  useWindowResize(handleUnlockScrollOnBreakpoint);
 
   // Handle click
   interface IHandleClick {
@@ -44,7 +42,7 @@ const Header: FC = () => {
   const handleClick: IHandleClick = () => {
     const windowWidth = window.innerWidth;
     const isLessBreakpoint = windowWidth < breakpoint;
-    isLessBreakpoint && setIsLockedScroll(!isLockedScroll);
+    isLessBreakpoint && setIsScrollLocked(!isScrollLocked);
   };
 
   const img = {
@@ -61,9 +59,9 @@ const Header: FC = () => {
           className="header__logo"
           onClick={handleUnlockScroll}
         >
-          <Img className="header" img={img} defaultStyle={false}></Img>
+          <Img className="header" img={img} resetStyle></Img>
         </AnchorLink>
-        <Menu isLockedScroll={isLockedScroll} onClick={handleClick} />
+        <Menu isLockedScroll={isScrollLocked} onClick={handleClick} />
         <SocialNetworks className="header" />
       </div>
     </header>

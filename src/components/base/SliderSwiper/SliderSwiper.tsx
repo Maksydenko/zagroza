@@ -1,5 +1,5 @@
 // import Swiper core and required modules
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import {
   SwiperOptions,
   // Navigation,
@@ -25,7 +25,7 @@ import "swiper/scss";
 
 interface SliderSwiperProps {
   className: string;
-  children: JSX.Element[];
+  children: ReactNode[];
   navigation?: boolean;
   pagination?: boolean;
   paginationClickable?: boolean;

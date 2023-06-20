@@ -68,7 +68,7 @@ const Header: FC = () => {
           className="header__logo"
           onClick={handleUnlockScroll}
         >
-          <Img className="header" img={img} resetStyle></Img>
+          <Img className="header" img={img} resetStyle priority></Img>
         </AnchorLink>
         <Menu isLockedScroll={isScrollLocked} onClick={handleClick} />
         <SocialNetworks className="header" />

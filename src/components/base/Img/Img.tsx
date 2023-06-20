@@ -1,5 +1,9 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import Image from "next/image";
+
+import Loader from "@/components/shared/Loader/Loader";
+
+import { useLoading } from "@/hooks/useLoading";
 
 import { handleClassName } from "@/utils/className.util";
 
@@ -11,6 +15,7 @@ interface ImgProps {
   img: IImg;
   style?: { [property: string]: string };
   resetStyle?: boolean;
+  priority?: boolean;
   width?: number;
   height?: number;
 }
@@ -21,9 +26,13 @@ const Img: FC<ImgProps> = ({
   img: { src, alt },
   style,
   resetStyle,
+  priority,
   width = 0,
   height = 0,
 }) => {
+  const objectRef = useRef<HTMLImageElement>(null);
+  const isLoading = useLoading(objectRef);
+
   const modifiedClassName = handleClassName(
     !!modifier,
     `${className}__img`,
@@ -33,7 +42,15 @@ const Img: FC<ImgProps> = ({
 
   return (
     <div className={modifiedClassName + defaultClassName} style={style}>
-      <Image src={src} alt={alt} width={width} height={height} />
+      {isLoading && <Loader />}
+      <Image
+        src={src}
+        alt={alt}
+        priority={priority}
+        width={width}
+        height={height}
+        ref={objectRef}
+      />
     </div>
   );
 };

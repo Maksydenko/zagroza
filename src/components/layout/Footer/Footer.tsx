@@ -20,7 +20,7 @@ const Footer: FC = () => {
         <div className="footer__body">
           <div className="footer__main">
             <AnchorLink href="#about" offset={100} className="footer__logo">
-              <Img className="footer" img={img} resetStyle priority></Img>
+              <Img className="footer" img={img} resetStyle></Img>
             </AnchorLink>
             <div className="footer__buttons">
               <Navigation />

@@ -8,15 +8,15 @@ interface SocialNetworksProps {
 }
 
 const SocialNetworks: FC<SocialNetworksProps> = ({ className }) => {
+  const items = links.map((link) => {
+    const { value, href } = link;
+
+    return <Link key={value} href={href} className={`_icon-${value}`}></Link>;
+  });
+
   return (
     <div className={`${className}__social-networks social-networks`}>
-      {links.map((link) => (
-        <Link
-          key={link.value}
-          href={link.href}
-          className={`_icon-${link.value}`}
-        ></Link>
-      ))}
+      {items}
     </div>
   );
 };

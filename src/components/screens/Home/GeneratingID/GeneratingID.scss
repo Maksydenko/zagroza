@@ -127,7 +127,9 @@
       padding-bottom: rem(185);
 
       @media (max-width: $mobile) {
-        filter: blur(rem(12));
+        img {
+          filter: blur(rem(12));
+        }
       }
     }
 
@@ -158,8 +160,11 @@
       left: rem(500);
       width: rem(250);
       padding-bottom: rem(250);
-      filter: blur(rem(12));
       transform: rotate(60deg);
+
+      img {
+        filter: blur(rem(12));
+      }
     }
   }
 }

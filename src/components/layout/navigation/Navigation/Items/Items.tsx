@@ -8,11 +8,13 @@ interface ItemsProps {
   links: ILink[];
 }
 
-const Items: FC<ItemsProps> = ({ links }) => (
-  <>
-    {links.map((link) => (
-      <Item key={link.href} link={link} />
-    ))}
-  </>
-);
+const Items: FC<ItemsProps> = ({ links }) => {
+  const items = links.map((link) => {
+    const { value } = link;
+
+    return <Item key={value} link={link} />;
+  });
+
+  return <ul className="navigation__list">{items}</ul>;
+};
 export default Items;

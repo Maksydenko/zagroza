@@ -169,7 +169,7 @@ const SliderSwiper: FC<SliderSwiperProps> = ({
 
   return (
     <Swiper
-      className={`${className}__slider`}
+      className={`${className}__swiper`}
       // Modules
       modules={[
         // Navigation,
